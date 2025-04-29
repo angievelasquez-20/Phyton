@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Regresión Lineal</title>
+</head>
+<body>
+    <h1>Regresión Lineal: calcular calificación</h1>
+
+    <form method="POST">
+        <label for="hours">Horas de estudio:</label>
+        <input type="number" name="hours" step="0.1" required>
+        <button type="submit">Calcular calificación</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Calificación estimada: {{ result }}</h2>
+    {% endif %}
+
+    <h2>Gráfica de Regresión</h2>
+    <img src="data:image/png;base64,{{ img_data }}" alt="Gráfica de regresión">
+</body>
+</html>

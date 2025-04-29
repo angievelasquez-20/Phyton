@@ -1,0 +1,30 @@
+body 
+{
+    background-color: rgba(234, 234, 226, 0.368);
+}
+h1 {
+    position: relative;
+    width: 250px;
+    left: 570px;
+    text-align: center;
+    FONT-FAMILY:Arial,Helvetica,sans-serif;
+    FONT-SIZE:16px;
+    line-height: 1.5px;
+    color: rgb(59, 61, 134);
+}
+h2 {
+    position: left;
+    width: 250px;
+    left: 570px;
+    text-align: left;
+    FONT-FAMILY:Arial,Helvetica,sans-serif;
+    FONT-SIZE:16px;
+    line-height: 1.5px;
+    color: rgb(0, 0, 0);
+}
+h3 {
+    color: #333;
+}
+h4 {
+    font-style: italic;
+}
