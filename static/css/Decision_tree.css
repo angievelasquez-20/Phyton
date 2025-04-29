@@ -1,0 +1,81 @@
+body {
+    background-color: rgba(234, 234, 226, 0.368); /* Color de fondo suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    margin: 0; /* Elimina márgenes predeterminados del body */
+    padding: 20px; /* Agrega un padding consistente */
+}
+
+h1 {
+    color: rgb(53, 3, 140); /* Color principal */
+    font-size: 2em; /* Tamaño de fuente relativo */
+    text-align: center; /* Centrado del texto */
+    margin-bottom: 20px; /* Espacio después del h1 */
+}
+
+h2 {
+    color: #333; /* Color de texto más oscuro */
+    font-size: 1.5em; /* Tamaño de fuente relativo */
+    margin-bottom: 10px; /* Espacio después del h2 */
+}
+
+h3 {
+    color: #555; /* Color de texto ligeramente más claro */
+    font-size: 1.2em; /* Tamaño de fuente relativo */
+    margin-bottom: 8px; /* Espacio después del h3 */
+}
+
+h4 {
+    font-style: italic; /* Estilo itálico */
+    color: #777; /* Color de texto más sutil */
+    font-size: 1em; /* Tamaño de fuente relativo */
+}
+
+/* Ejemplo de estilos para el formulario (si lo tienes) */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: rgb(53, 3, 140);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(38, 2, 98);
+}
+
+/* Ejemplo de estilos para listas */
+ul, ol {
+    list-style-type: none; /* Elimina los marcadores de lista */
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}

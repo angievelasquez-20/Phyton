@@ -1,30 +1,56 @@
-body 
-{
-    background-color: rgba(234, 234, 226, 0.368);
+body {
+    background-color: rgba(234, 234, 226, 0.368); /* Color de fondo suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    /*margin: 0; /* Elimina márgenes predeterminados del body */
+    padding: 20px; /* Agrega un padding consistente */
+    color: #333; /* Color de texto oscuro para mejor contraste */
+    font-size: 16px; /* Tamaño de fuente base */
+    max-width: 800px; /* Ancho máximo para evitar líneas demasiado largas */
+    margin: 2px; /* Centra el contenido en la página */
+    padding: 20px; /* Espacio interno alrededor del contenido */
+    border-radius: 8px; /* Bordes redondeados para un diseño más suave */
 }
-h1 {
-    position: relative;
-    width: 250px;
-    left: 570px;
-    text-align: center;
-    FONT-FAMILY:Arial,Helvetica,sans-serif;
-    FONT-SIZE:16px;
-    line-height: 1.5px;
-    color: rgb(59, 61, 134);
+
+h1, h2 {
+    color: rgb(59, 61, 134); /* Color principal para h1 y h2 */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente consistente */
+    font-size: 1.8em; /* Tamaño de fuente relativo y mejorado */
+    line-height: 1.4; /* Ajuste de line-height para mejor legibilidad */
+    width: auto; /* Permite que el ancho se ajuste al contenido */
+    max-width: 80%; /* Evita que el texto se extienda demasiado en pantallas grandes */
+    margin: 20px auto; /* Centra el texto horizontalmente y agrega margen vertical */
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Espacio interno alrededor del h1 y h2 */
+    border-radius: 8px; /* Bordes redondeados para un diseño más suave */
+    background-color: rgba(59, 61, 134, 0.1); /* Fondo suave para h1 y h2 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
+
 h2 {
-    position: left;
-    width: 250px;
-    left: 570px;
-    text-align: left;
-    FONT-FAMILY:Arial,Helvetica,sans-serif;
-    FONT-SIZE:16px;
-    line-height: 1.5px;
-    color: rgb(0, 0, 0);
+    font-size: 1.5em; /* Tamaño de fuente ligeramente menor para h2 */
+    text-align: left; /* Alinea el texto a la izquierda para h2 */
+    margin-top: 20px; /* Espacio superior para h2 */
+    margin-bottom: 10px; /* Espacio inferior para h2 */
+    padding: 5px; /* Espacio interno alrededor del h2 */
+    background-color: rgba(59, 61, 134, 0.05); /* Fondo suave para h2 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra sutil para h2 */
 }
+
 h3 {
-    color: #333;
+    color: #333; /* Color de texto más oscuro */
+    font-size: 1.2em; /* Tamaño de fuente relativo */
+    margin-bottom: 8px; /* Espacio después del h3 */
+    font-weight: bold; /* Negrita para h3 */
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 5px; /* Espacio interno alrededor del h3 */
+    background-color: rgba(59, 61, 134, 0.05); /* Fondo suave para h3 */
 }
+
 h4 {
-    font-style: italic;
+    font-style: italic; /* Estilo itálico */
+    color: #777; /* Color de texto más sutil */
+    font-size: 1em; /* Tamaño de fuente relativo */
 }

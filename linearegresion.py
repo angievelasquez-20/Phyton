@@ -38,4 +38,3 @@ def generate_plot():
     return img_data
 
 
-

@@ -4,37 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML Supervisado - Árbol de Decisión</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/Decision_tree.css') }}">
 </head>
 <body>
     <h1>Predicción de Compra con Árbol de Decisión</h1>
     <p>Este modelo predice si un cliente comprará un producto en base a su edad, ingreso y ubicación.</p>
-    
-    <h3>Datos de Entrada:</h3>
-    <ul>
-        <li>Edad: {{ datos.edad }}</li>
-        <li>Ingreso Mensual: {{ datos.ingreso }}</li>
-        <li>Ubicación: {{ datos.ubicacion }}</li>
+
+    <form method="POST">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+
+        <label for="ingreso">Ingreso Mensual:</label>
+        <input type="number" id="ingreso" name="ingreso" required><br><br>
+
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacion" name="ubicacion" required><br><br>
+
+       <button type="button" id="btn-enviar">enviar</button><br><br>
+        <label for="modelo">Modelo:</label>
+        <select id="modelo" name="modelo">
+            <option value="DecisionTreeClassifier">Árbol de Decisión</option>
+            <option value="RandomForestClassifier">Bosque Aleatorio</option>
+            <option value="LogisticRegression">Regresión Logística</option>
+        <button type="button" id="btn-predecir">Predecir Compra</button>
+        <button type="button" id="btn-limpiar">Limpiar</button><br><br>
+    </form>
+
+    <h3>Resultados:</h3>
+    <p>Los resultados de la predicción se mostrarán aquí.</p>
+
+    <ul id="datos-lista">
+        <li>Edad: </li>
+        <li>Ingreso Mensual: </li>
+        <li>Ubicación: </li>
     </ul>
+    <p>Compra: </p>
 
-    <h3>Resultado:</h3>
-    <p>Compra: {{ resultado }}</p>
+    <script>
+        document.getElementById('btn-predecir').addEventListener('click', function() {
+            const edad = document.getElementById('edad').value;
+            const ingreso = document.getElementById('ingreso').value;
+            const ubicacion = document.getElementById('ubicacion').value;
 
-    <!-- templates/DecisionTree.html -->
-<h2>Predicción de Compra</h2>
-<p><strong>Edad:</strong> {{ datos.edad }}</p>
-<p><strong>Ingreso:</strong> {{ datos.ingreso }}</p>
-<p><strong>Ubicación:</strong> {{ datos.ubicacion }}</p>
-<p><strong>¿Compra?:</strong> {{ resultado }}</p>
-    
-        <h3>Gráfica del Árbol de Decisión</h3>
-        /* <img src="{{ url_for('static', filename='decision_tree.png') }}" alt="Árbol de Decisión" style="width: 100%; max-width: 600px;"> */
-    
-        <h3>Descripción del Modelo</h3>
-        <p>El árbol de decisión se construyó utilizando el algoritmo CART (Classification and Regression Trees). Este modelo es capaz de clasificar datos en función de sus características.</p>
-    
-        <footer>
-            <p>&copy; 2023 Tu Nombre</p>
-        </footer>
+            fetch('/predecir', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ edad: edad, ingreso: ingreso, ubicacion: ubicacion })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('datos-lista').innerHTML = `
+                    <li>Edad: ${data.edad}</li>
+                    <li>Ingreso Mensual: ${data.ingreso}</li>
+                    <li>Ubicación: ${data.ubicacion}</li>
+                `;
+                document.querySelector('h3 + p').textContent = `Compra: ${data.resultado}`;
+                document.querySelectorAll('h2 + p')[0].textContent = `Edad: ${data.edad}`;
+                document.querySelectorAll('h2 + p')[1].textContent = `Ingreso: ${data.ingreso}`;
+                document.querySelectorAll('h2 + p')[2].textContent = `Ubicación: ${data.ubicacion}`;
+                document.querySelectorAll('h2 + p')[3].textContent = `¿Compra?: ${data.resultado}`;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('btn-limpiar').addEventListener('click', function() {
+            document.getElementById('edad').value = '';
+            document.getElementById('ingreso').value = '';
+            document.getElementById('ubicacion').value = '';
+            document.getElementById('datos-lista').innerHTML = `
+                <li>Edad: </li>
+                <li>Ingreso Mensual: </li>
+                <li>Ubicación: </li>
+            `;
+            document.querySelector('h3 + p').textContent = `Compra: `;
+            document.querySelectorAll('h2 + p')[0].textContent = `Edad: `;
+            document.querySelectorAll('h2 + p')[1].textContent = `Ingreso: `;
+            document.querySelectorAll('h2 + p')[2].textContent = `Ubicación: `;
+            document.querySelectorAll('h2 + p')[3].textContent = `¿Compra?: `;
+        });
+    </script>
 </body>
 </html>
