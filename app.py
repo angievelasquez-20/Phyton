@@ -61,7 +61,7 @@ def decision_tree():
 def RL():
     return render_template('RL.html', datos=dates, resultado=reduction)
 
-@app.route("/")
+@app.route("")
 def index():
     return render_template("index.html")
 
@@ -69,17 +69,12 @@ def index():
 def RegesionLogistica():
     return render_template("RegresionLogistica.html")
 
-@app.route("/templates/DefMachine.htm")
+@app.route("/DefMachine")
 def DefMachine():
     return render_template("DefMachine.html") 
 
-@app.route("/templates/DefInteligencia.html")
-def DefInteligencia():
-    return render_template("DefInteligencia.html")
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
