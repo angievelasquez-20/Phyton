@@ -61,15 +61,16 @@ def decision_tree():
 def RL():
     return render_template('RL.html', datos=dates, resultado=reduction)
 
-@app.route("/index")
+@app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/")
+@app.route("/RegresionLogistica")
 def RegesionLogistica():
     return render_template("RegresionLogistica.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
