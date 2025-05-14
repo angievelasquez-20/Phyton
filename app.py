@@ -61,7 +61,7 @@ def decision_tree():
 def RL():
     return render_template('RL.html', datos=dates, resultado=reduction)
 
-@app.route("")
+@app.route("/")
 def index():
     return render_template("index.html")
 
