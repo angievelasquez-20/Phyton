@@ -69,8 +69,17 @@ def index():
 def RegesionLogistica():
     return render_template("RegresionLogistica.html")
 
+@app.route("/templates/DefMachine.htm")
+def DefMachine():
+    return render_template("DefMachine.html") 
+
+@app.route("/templates/DefInteligencia.html")
+def DefInteligencia():
+    return render_template("DefInteligencia.html")
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 
