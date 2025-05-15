@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelos de Machine Learning</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #fef9e7; /* amarillo beagle claro */
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .content-box {
+      background-color: #e3f2fd; /* azul claro */
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    h1, h2 {
+      font-weight: bold;
+    }
+
+    .table th, .table td {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-box">
+    <div class="container">
+      <h1 class="text-center mb-4">Modelos de Machine Learning</h1>
+      <p class="lead text-center">Clasificados según el tipo de aprendizaje: supervisado, no supervisado y por refuerzo.</p>
+
+      <!-- Aprendizaje Supervisado -->
+      <section class="mb-5">
+        <h2 class="text-primary">1. Aprendizaje Supervisado</h2>
+        <p>Utiliza datos etiquetados para predecir o clasificar. Es uno de los enfoques más utilizados en la industria.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Modelo</th>
+                <th>Descripción</th>
+                <th>Aplicaciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Regresión Lineal</td>
+                <td>Modelo simple que predice valores continuos a partir de una variable o múltiples variables.</td>
+                <td>Predicción de precios, análisis financiero, tendencias de ventas.</td>
+              </tr>
+              <tr>
+                <td>Regresión Logística</td>
+                <td>Clasificador binario que predice categorías usando una función sigmoide.</td>
+                <td>Detección de fraude, clasificación de correos (spam/no spam).</td>
+              </tr>
+              <tr>
+                <td>Árboles de Decisión</td>
+                <td>Divide el espacio de decisión en forma de árbol según criterios.</td>
+                <td>Diagnóstico médico, predicción de riesgo crediticio.</td>
+              </tr>
+              <tr>
+                <td>Random Forest</td>
+                <td>Ensamble de múltiples árboles que mejora precisión y reduce sobreajuste.</td>
+                <td>Clasificación de clientes, modelos financieros.</td>
+              </tr>
+              <tr>
+                <td>K-Nearest Neighbors (KNN)</td>
+                <td>Clasifica en base a los 'k' vecinos más cercanos en los datos.</td>
+                <td>Recomendadores, reconocimiento de patrones.</td>
+              </tr>
+              <tr>
+                <td>Máquinas de Vectores de Soporte (SVM)</td>
+                <td>Busca un hiperplano óptimo que separe categorías.</td>
+                <td>Reconocimiento facial, clasificación de textos.</td>
+              </tr>
+              <tr>
+                <td>Redes Neuronales Artificiales (ANN)</td>
+                <td>Modelos inspirados en el cerebro humano; muy potentes con grandes cantidades de datos.</td>
+                <td>Visión por computador, procesamiento de lenguaje natural.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Aprendizaje No Supervisado -->
+      <section class="mb-5">
+        <h2 class="text-success">2. Aprendizaje No Supervisado</h2>
+        <p>Trabaja con datos no etiquetados para descubrir estructuras ocultas como agrupamientos o reducciones de dimensionalidad.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Modelo</th>
+                <th>Descripción</th>
+                <th>Aplicaciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>K-Means Clustering</td>
+                <td>Agrupa datos en k clusters según similitud de características.</td>
+                <td>Segmentación de clientes, agrupación de documentos.</td>
+              </tr>
+              <tr>
+                <td>Clustering Jerárquico</td>
+                <td>Crea una jerarquía de grupos mediante fusiones o divisiones sucesivas.</td>
+                <td>Estudios genéticos, análisis de similitud entre textos.</td>
+              </tr>
+              <tr>
+                <td>DBSCAN</td>
+                <td>Agrupamiento basado en densidad, útil con formas irregulares.</td>
+                <td>Detección de anomalías, agrupación geoespacial.</td>
+              </tr>
+              <tr>
+                <td>PCA (Análisis de Componentes Principales)</td>
+                <td>Reduce la dimensionalidad preservando la mayor varianza posible.</td>
+                <td>Compresión de datos, visualización, preprocesamiento.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Aprendizaje por Refuerzo -->
+      <section>
+        <h2 class="text-warning">3. Aprendizaje por Refuerzo</h2>
+        <p>Un agente aprende a través de la interacción con un entorno, recibiendo recompensas o penalizaciones por sus acciones.</p>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th>Modelo</th>
+                <th>Descripción</th>
+                <th>Aplicaciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Q-Learning</td>
+                <td>Aprende una política de acciones óptimas a través de una tabla Q de recompensas.</td>
+                <td>Juegos, navegación de robots, planificación de rutas.</td>
+              </tr>
+              <tr>
+                <td>Deep Q-Networks (DQN)</td>
+                <td>Extiende Q-learning usando redes neuronales para entornos complejos.</td>
+                <td>Videojuegos, conducción autónoma.</td>
+              </tr>
+              <tr>
+                <td>Policy Gradient</td>
+                <td>Aprende políticas directamente optimizando la probabilidad de tomar buenas acciones.</td>
+                <td>Robótica, control en tiempo real.</td>
+              </tr>
+              <tr>
+                <td>Modelos Actor-Critic</td>
+                <td>Combina los métodos basados en valor (critic) y en política (actor) para mejorar eficiencia.</td>
+                <td>Control de robots, trading algorítmico.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

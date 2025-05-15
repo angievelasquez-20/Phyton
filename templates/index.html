@@ -44,7 +44,7 @@
         <div class="card-body">
           <h5 class="Machine Learning">Machine Learning</h5>
           <p class="card-text">Aprendizaje automático es una rama de la inteligencia artificial que permite a las computadoras aprender de los datos y mejorar su rendimiento en tareas específicas sin ser programadas explícitamente para cada una de ellas. </p>
-          <button class="/templates/DefMachine.htm">Mas información</button>
+          <a href="{{ url_for('DefMachine') }}" class="btn btn-primary">Más información</a>        
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
         <div class="card-body">
           <h5 class="Inteligenia Artificial">Inteligencia Artifiial</h5>
           <p class="card-text">Es una rama de la informática que se enfoca en desarrollar sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.</p>
-          <button class="btn btn-primary">Mas información</button>
+          <a href="{{ url_for('DefInteligencia') }}" class="btn btn-primary">Más información</a>
         </div>
       </div>
     </div>
@@ -68,24 +68,22 @@
         <div class="card-body">
           <h5 class="diferencias">Diferencias entre machine learning e inteligencia artificial</h5>
           <p class="card-text">Machine Learning es una subcategoría de la Inteligencia Artificial---Toda técnica de ML es IA, pero no toda IA utiliza ML.</p>
-          <button class="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DKOVBu-jn3dQ&psig=AOvVaw0ClfdZWEpTBO2CCn_HKWeF&ust=1747346949671000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKDrrLb9o40DFQAAAAAdAAAAABAQ">Mas información</button>
+        <a href="{{ url_for('Diferencia') }}" class="btn btn-primary">Más información</a>
         </div>
       </div>
     
   </div>
 </div>
-
-
 <div class="container">
   <div class="row">
-    <!-- Columna 1 -->
+    <!-- Columna 4-->
     <div class="col-md-4">
       <div class="card mb-4">
-        <img src="..." class="card-img-top" alt="Imagen">
+        <img src="{{ url_for('static', filename='modeloML.jpeg') }}" class="card-img-top" alt="Imagen">
         <div class="card-body">
-          <h5 class="card-title">Título 1</h5>
-          <p class="card-text">Contenido de la primera tarjeta.</p>
-          <button class="btn btn-primary">Botón 2</button>
+          <h5 class="card-title">Modelos de Machine Learning</h5>
+          <p class="card-text">Clasificados según el tipo de aprendizaje: supervisado, no supervisado y por refuerzo.</p>
+          <a href="{{ url_for('modelosML') }}" class="btn btn-primary">Más información</a>
         </div>
       </div>
     </div>

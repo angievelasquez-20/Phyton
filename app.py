@@ -73,6 +73,18 @@ def RegesionLogistica():
 def DefMachine():
     return render_template("DefMachine.html") 
 
+@app.route("/DefInteligencia")
+def DefInteligencia():
+    return render_template("DefInteligencia.html")
+
+@app.route("/Diferencia")
+def Diferencia():
+    return render_template("Diferencia.html")
+
+@app.route("/modelosML")
+def modelosML():
+    return render_template("modelosML.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
 
