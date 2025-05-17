@@ -65,9 +65,24 @@ def RL():
 def index():
     return render_template("index.html")
 
-@app.route("/RegresionLogistica")
-def RegesionLogistica():
-    return render_template("RegresionLogistica.html")
+
+@app.route("/RegresionLogistica", methods=["GET", "POST"])
+def RegresionLogistica():
+    predicted_result = None
+    if request.method == 'POST':
+        try:
+            distancia = float(request.form['distancia'])
+            peso = float(request.form['peso'])
+            clima = request.form['clima']
+            trafico = request.form['trafico']
+
+            predicted_result = RegresionLogistica.predict_transport(distancia, peso, clima, trafico)
+
+        except (ValueError, TypeError):
+            predicted_result ="Entrada no valida"
+
+    return render_template("RegresionLogistica.html", predicted_result=predicted_result)
+
 
 @app.route("/DefMachine")
 def DefMachine():

@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta charset="utf-8">
-   <title>RegresionLogistica</title>
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/RegresionLogistica.css') }}">
-   </head>
+    <title>Predicción de Transporte</title>
+</head>
 <body>
-    <h1>Regresión Logistica</h1>
-    <h2>Definicion</h2>
-    <p>La regresión logística es un modelo estadístico utilizado para predecir la probabilidad de que un evento ocurra, dado un conjunto de variables independientes. A diferencia de la regresión lineal, que predice valores continuos, la regresión logística se utiliza para problemas de clasificación binaria.</p>
-    <h2>Fundamento matematio</h2>
-    <p>•La función logística (sigmoide) es la base del modelo. Transforma cualquier valor real en un valor entre 0 y 1, representando probabilidades.
-    <p>•La ecuación general es: p = 1 / (1 + e^(-z)), donde z es una combinación lineal de las variables independientes.
-    <p>•Se utiliza el método de máxima verosimilitud para estimar los coeficientes del modelo
-    </p>
-    <h2>Tipo de problemas</h2>
-    <p>•Clasificación Binaria: Predice dos resultados posibles (ejemplo: sí/no, verdadero/falso).
-    <p>•Clasificación Multiclase: Predice más de dos resultados posibles (ejemplo: categorías de productos, tipos de enfermedades).</p>
-    <h2>Ventajas</h2>
-    <p>•Fácil de interpretar y aplicar.
-    <p>•Proporciona probabilidades, útiles para la toma de decisiones.</p>
-    <p>•Eficiente para problemas de clasificación binaria.</p>
-    <h2>Desventajas</h2>
-    <p>•Asume una relación lineal entre las variables independientes y el logaritmo de las probabilidades.
-    <p>•Sensible a valores atípicos.
-    <p>•Puede tener un rendimiento deficiente con conjuntos de datos complejos.</p>
-    <h2>Casos de uso reales</h2>
-    <h3>1.Diagnóstico de Enfermedad Cardíaca</h3>
-    <p>•Contexto del Problema: La enfermedad cardíaca es una de las principales causas de muerte en todo el mundo. La detección temprana y la evaluación del riesgo son cruciales para la prevención y el tratamiento.
-    <p>•Variables Involucradas: Edad, sexo, presión arterial, niveles de colesterol, resultados de electrocardiogramas, historial familiar.</p>
-    <h3>Aplicación de la Regresión Logística: </h3>
-    <p>oSe utilizó la regresión logística para desarrollar un modelo predictivo que estima la probabilidad de que un paciente tenga enfermedad cardíaca basándose en sus factores de riesgo.
-    <p>oEl modelo asigna una probabilidad a cada paciente, lo que ayuda a los médicos a identificar a aquellos con mayor riesgo.
-    </p>
-    <h3>Resultados e impactos</h3>
-    <p>oEl modelo demostró una precisión significativa en la predicción del riesgo de enfermedad cardíaca.
-    <p>oPermitió una mejor estratificación del riesgo, lo que llevó a intervenciones más tempranas y personalizadas.
-        </p>
-        <a href="https://mm.tt/app/map/3664670153?t=7YDC4FP5qU" target="_blank">Mapa Mental</a>
+    <h1>Ingrese los datos del paquete</h1>
+    <form method="POST">
+        <label for="distancia">Distancia:</label><br>
+        <input type="number" id="distancia" name="distancia"><br><br>
+        <label for="peso">Peso:</label><br>
+        <input type="number" id="peso" name="peso"><br><br>
+        <label for="clima">Clima:</label><br>
+        <select id="clima" name="clima">
+            <option value="soleado">Soleado</option>
+            <option value="lluvioso">Lluvioso</option>
+            <option value="nublado">Nublado</option>
+            <option value="tormenta">Tormenta</option>
+        </select><br><br>
+        <label for="trafico">Tráfico:</label><br>
+        <select id="trafico" name="trafico">
+            <option value="bajo">Bajo</option>
+            <option value="medio">Medio</option>
+            <option value="alto">Alto</option>
+        </select><br><br>
+        <input type="submit" value="Predecir">
+    </form>
 
+    {% if predicted_result is not none %}
+        <h2>Resultado de la predicción:</h2>
+        {% if predicted_result == 1 %}
+            <p>El paquete probablemente se podrá transportar.</p>
+        {% elif predicted_result == 0 %}
+            <p>El paquete probablemente NO se podrá transportar.</p>
+        {% else %}
+            <p>{{ predicted_result }}</p>
+        {% endif %}
+    {% endif %}
 </body>
 </html>
